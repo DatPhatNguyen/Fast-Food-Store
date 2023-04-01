@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  .nav-product__logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-product__detail a,
+  .nav-product__users a {
+    text-transform: capitalize;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 16px;
+    text-decoration: none;
+  }
+}
