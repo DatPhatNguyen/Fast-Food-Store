@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const config = require("../config/index");
+const config = require("../config/");
 async function connect() {
   try {
     mongoose.set("strictQuery", false);

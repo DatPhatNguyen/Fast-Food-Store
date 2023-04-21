@@ -12,7 +12,7 @@ const errorHandler = (err, req, res, next) => {
       res.json({ title: "Server Error", message: err.message, stackTrace: err.stack });
       break;
     default:
-      console.log("Everything is okay!!");
+      console.log("Nothing occurs");
       break;
   }
 };
