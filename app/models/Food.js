@@ -1,9 +1,12 @@
 // const mongoose = require("mongoose");
 const { mongoose, model } = require("mongoose");
 const Schema = mongoose.Schema;
-const foodSchema = new Schema(
+const ObjectId = Schema.ObjectId;
+const Food = new Schema(
   {
-    id: { type: ObjectId },
+    id: {
+      type: ObjectId = require('mongodb').ObjectId,
+    },
     name: { type: String, required: [true, "Message"], trim: true },
     description: { type: String, trim: true },
     price: { type: Number, required: true, },
@@ -13,4 +16,4 @@ const foodSchema = new Schema(
     timestamps: true,
   }
 );
-module.exports = model("Food", foodSchema);
+module.exports = model("Food", Food);

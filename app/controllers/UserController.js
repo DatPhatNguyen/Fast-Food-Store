@@ -5,17 +5,21 @@ const jwt = require('jsonwebtoken');
 class UserController {
     //todo: [GET] : users/ get all user
     getUserHandle(req, res, next) {
-        res.send('All User will place here');
+        res.json('All User will place here');
     }
-
     //todo: [GET] : users/:id get user
     getDetailUserHandle(req, res, next) {
-        res.send('User Detail');
+        res.json('User Detail');
+        const id = req.params.id;
+        console.log(id);
     }
     //todo: [POST] create new user
     registerHandle(res, req, next) {
         try {
             const { username, password } = req.body;
+            if (!username && !password) {
+                return res.json({ message: "Please fill in all field" }).status(404);
+            }
             if (username.trim().length < 6) {
                 return res.json({ msg: 'Username is much be larger than 6 characters' });
             }

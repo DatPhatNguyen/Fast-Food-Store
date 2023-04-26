@@ -1,10 +1,12 @@
-// const mongoose = require("mongoose");
+// const validate = require('mongoose-validator');
 const { mongoose, model } = require("mongoose");
 const Schema = mongoose.Schema;
-// const validate = require('mongoose-validator');
-const userSchema = new Schema(
+const ObjectId = Schema.ObjectId;
+const User = new Schema(
   {
-    id: { type: ObjectId },
+    id: {
+      type: ObjectId
+    },
     username: {
       type: String,
       required: true,
@@ -21,4 +23,4 @@ const userSchema = new Schema(
     timestamps: true,
   }
 );
-module.exports = model("Food", userSchema);
+module.exports = model("User", User);

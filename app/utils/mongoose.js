@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const config = require("../config/");
-async function connect() {
+const connect = async () => {
   try {
     mongoose.set("strictQuery", false);
     const connect = await mongoose.connect(config.db.url, {
